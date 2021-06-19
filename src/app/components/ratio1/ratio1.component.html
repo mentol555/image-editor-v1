@@ -1,0 +1,92 @@
+<div id="ratio1root">
+    <div id="sidebar">
+        <div id="steps">
+            <div class="step" [ngStyle]="{'background-color': toShow === 2 ? '#55AE3A' : '#006633' }">1:1</div>
+            <div class="step" [ngStyle]="{'background-color': toShow === 3 ? '#55AE3A' : '#006633' }">16:9</div>
+            <div class="step">SEO</div>
+        </div>
+        <mat-slider
+                id="bright"
+                class="slider"
+                [disabled]="false"
+                [invert]="false"
+                [max]=200
+                [min]=0
+                [step]=1
+                [tickInterval]=1
+                [vertical]="false"
+                [(ngModel)]="bright"
+                (change)="cropItWithChanges()"
+        >
+            
+        </mat-slider>
+        <div class="icondiv" style="user-select: none;">
+            <mat-icon (click)="decrBright()" class="icon">remove</mat-icon>
+            <span class="display">{{bright}}</span>
+            <mat-icon (click)="incrBright()" class="icon">add</mat-icon>
+        </div>
+
+        <mat-slider
+                id="contrast"
+                class="slider"
+                [disabled]="false"
+                [invert]="false"
+                [max]=200
+                [min]=0
+                [step]=1
+                [tickInterval]=1
+                [vertical]="false"
+                [(ngModel)]="contrast"
+                (change)="cropItWithChanges()">
+        </mat-slider>
+
+        <div class="icondiv" style="user-select: none;">
+            <mat-icon (click)="decrCont()" class="icon">remove</mat-icon>
+            <span class="display">{{contrast}}</span>
+            <mat-icon (click)="incrCont()" class="icon">add</mat-icon>
+        </div>
+
+        <mat-slider
+                class="slider"
+                [disabled]="false"
+                [invert]="false"
+                [max]=360
+                [min]=0
+                [step]=1
+                [tickInterval]=1
+                [vertical]="false"
+                [(ngModel)]="hue"
+                (change)="cropItWithChanges()">
+            
+        </mat-slider>
+
+        <div class="icondiv" style="user-select: none;">
+            <mat-icon (click)="decrHue()" class="icon">remove</mat-icon>
+            <span class="display">{{hue}}</span>
+            <mat-icon (click)="incrHue()" class="icon">add</mat-icon>
+        </div>
+
+        <div class="sidebarbuttons">
+            <div class="buttondiv" (click)="rotateleft()"><mat-icon>rotate_90_degrees_ccw</mat-icon></div>
+            <div class="buttondiv" (click)="rotateright()"><mat-icon style="transform: scaleX(-1);">rotate_90_degrees_ccw</mat-icon></div>
+            <div class="buttondiv" (click)="fliphoriz()"><mat-icon>flip</mat-icon></div>
+            <div class="buttondiv" (click)="flipvertic()"><mat-icon style="transform: rotate(90deg)">flip</mat-icon></div>
+        </div>
+        <div class="stepbuttons">
+            <div class="stepbutton" style="background-color: #BFBFBF; color: black" (click)="backStep()"><mat-icon>arrow_left</mat-icon></div>
+            <div class="stepbutton" style="background-color: #55AE3A; color: white; border: 0.1em solid white;" (click)="nextStep()"><mat-icon>double_arrow</mat-icon></div>
+        </div>
+    </div>
+    <div id="mainratio">
+        <div class="imag" [style.height.px]="pictureHeight" [style.width.px]="pictureWidth">
+            <img #image crossorigin [src]="pictureUrl" id="immg">
+        </div>
+        <span class="prev" style="margin-left: 70vw;">
+            <img [src]="imageDestination" 
+                alt="no"
+                id="preview"
+            >
+            
+        </span>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="imageupload">
+    <div class="select-image">
+        <ngx-dropzone #drop (change)="onSelect($event)" accept="image/*" [disableClick]="true">
+            <ngx-dropzone-label id="uploadlabel">
+                Húzz egy képet ide <br> <br> vagy <br>
+                <div id="uploadbutton" (click)="drop.showFileSelector()">Válassz képet</div>
+                <div id="deleteicon" *ngIf="pictureUrl" (click)="deleteImage()"><mat-icon style="font-size:0.5em;">delete</mat-icon></div>
+            </ngx-dropzone-label>
+            
+            <div [style.background-image]="'url(' + pictureUrl + ')'" style="background-position: center; background-repeat: no-repeat; background-size: cover;" class="preview">
+                <strong style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" *ngIf="!pictureUrl">Preview</strong>
+            </div>
+        </ngx-dropzone>
+    </div>
+    <div id="nexticon" (click)="nextStep()"><mat-icon>double_arrow</mat-icon></div>
+</div> 

@@ -1,0 +1,28 @@
+<div class="seoroot">
+    <div class="sidebar">
+        <div id="steps" style="display: flex; align-items: center; justify-content: space-around;">
+            <div class="step" [ngStyle]="{'background-color': toShow === 2 ? '#55AE3A' : '#006633' }">1:1</div>
+            <div class="step" [ngStyle]="{'background-color': toShow === 3 ? '#55AE3A' : '#006633' }">16:9</div>
+            <div class="step" [ngStyle]="{'background-color': toShow === 4 ? '#55AE3A' : '#006633' }">SEO</div>
+        </div>
+        <div id="descriptions">
+            <div class="description"><mat-icon style="margin-right:2%;">photo</mat-icon>Helyettesítő szöveg: A Fotball rejtelmei</div>
+            <div class="description"><mat-icon style="margin-right:2%;">image_search</mat-icon>Keresőbarát útvonal: a_fotball_rejtelmei</div>
+            <div class="description"><mat-icon style="margin-right:2%;">title</mat-icon>Képcím: A Fotball rejtelmei</div>
+            <div class="description"><mat-icon style="margin-right:2%;">photo_library</mat-icon>Képaláírás: <br> A fotball egy sport ami ababababababab ababababababababababababababab.</div>
+        </div>
+        <div class="stepbuttons">
+            <div class="stepbutton" style="background-color: #F2F2F2; color: black; border: 0.1em solid black"(click)="backStep()"><mat-icon style="transform: scaleX(-1);">double_arrow</mat-icon></div>
+            <div class="stepbutton" style="background-color: #006633; color: white; border: 0.1em solid white;">Done</div>
+        </div>
+    </div>
+    <div id="images">
+        <div id="original">
+            <img [src]="originalImage" alt="no" height="100%" width="100%">
+        </div>
+        <div id="editedimages">
+            <div id="image_1_1"><img [src]="image_1_1" alt="no" height="100%"></div>
+            <div id="image_16_9"><img [src]="image_16_9" alt="no" height="100%"></div>
+        </div>
+    </div>
+</div>

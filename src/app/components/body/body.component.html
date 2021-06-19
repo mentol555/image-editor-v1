@@ -1,0 +1,6 @@
+<div class="bodydiv">
+    <app-upload-image *ngIf="toShow === 1"></app-upload-image>
+    <app-ratio1 *ngIf="toShow === 2" [toShow]="toShow" [ratio]="1"></app-ratio1>
+    <app-ratio1 *ngIf="toShow === 3" [toShow]="toShow" [ratio]="16/9"></app-ratio1>
+    <app-seo *ngIf="toShow === 4" [toShow]="toShow"></app-seo>
+</div>
